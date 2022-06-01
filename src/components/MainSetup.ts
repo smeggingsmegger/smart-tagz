@@ -46,7 +46,11 @@ export default function ({ autosuggest, allowPaste = { delimiter: "," }, allowDu
   });
 
   const focus = () => {
-    (textInputRef.value as unknown as HTMLElement).focus()
+    try {
+      (textInputRef.value as unknown as HTMLElement).focus()
+    } catch {
+
+    }
   };
 
   const reset: () => void = () => {
